@@ -12,22 +12,22 @@
             <h3>Formulario de alta</h3>
             <div>
                 <label for="titulo">Título: </label>
-                <input type="text" name="titulo" value="">
+                <input type="text" name="titulo" value="" [(ngModel)]="titulo">
             </div>
             <div>
                 <label for="imagen">Imagen: </label>
-                <input type="text" name="imagen" value="">
+                <input type="text" name="imagen" value="" [(ngModel)]="imagen">
             </div>
             <div>
                 <label for="texto">Texto: </label>
-                <textarea name="texto" rows="10" cols="50" value=""></textarea>
+                <textarea name="texto" rows="10" cols="50" value="" [(ngModel)]="texto"></textarea>
             </div>
             <div>
                 <label for="Fecha">Título: </label>
-                <input type="date" name="fecha" value="">
+                <input type="date" name="fecha" value="" [(ngModel)]="fecha">
             </div>
             <div>
-                <button>Crear</button>
+                <button (click)="crearPost()">Crear</button>
             </div>
         </form>
     </section>
@@ -56,6 +56,7 @@
 
     </section>
 </main>
+<hr>
 <footer class="">
     <p class="">Francisco Sánchez</p>
 </footer>
