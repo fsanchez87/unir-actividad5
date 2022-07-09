@@ -5,7 +5,7 @@
 <hr>
 
 <main>
-    
+
     <!-- Formulario -->
     <section>
         <form action="/signup" method="post">
@@ -36,20 +36,20 @@
     <hr>
     <section>
         <h3>Listado de noticias</h3>
-        <article>
+        <article *ngFor="let noticia of noticias; let i = index;">
             <header>
-                <h3>Titulo</h3>
+                <h3>{{noticia.titulo}}</h3>
             </header>
             <section>
                 <figure>
-                    <img src="" alt="Descripción img">
-                    <figcaption>Figcaption</figcaption>
+                    <img [src]="noticia.imagen" [alt]="'img noticia ' + i">
+                    <figcaption>Imagen noticia {{i + 1}}</figcaption>
                 </figure>
-                <p>Cuerpo de la noticia</p>
+                <p>{{noticia.texto}}</p>
             </section>
             <footer>
                 <small>
-                    Posted on <time datetime="2017-04-29T19:00">Apr 29</time>
+                    Posted on <time datetime="2017-04-29T19:00">{{noticia.fecha}}</time>
                 </small>
             </footer>
         </article>
@@ -57,7 +57,5 @@
     </section>
 </main>
 <footer class="">
-    <p class="">
-        Francisco Sánchez
-    </p>
+    <p class="">Francisco Sánchez</p>
 </footer>
