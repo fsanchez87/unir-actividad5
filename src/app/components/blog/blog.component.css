@@ -8,8 +8,14 @@
 }
 
 /* formulario */
-.section__title {
-  margin-top: 18px;
+.section__header {
+  display: flex;
+  margin-top: 10px;
+}
+
+.btn-alta {
+  margin-left: 8px;
+  display: inline-block;
 }
 
 .formulario {
@@ -21,8 +27,6 @@
   justify-content: baseline;
 }
 
-.formulario__inputs {
-}
 
 .formulario__textarea {
   overflow: auto;

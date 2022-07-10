@@ -9,8 +9,12 @@
 
     <!-- Formulario -->
     <section>
-        <h3 class="heading-3 section__title">Formulario de alta</h3>
-        <form action="" method="" id="formulario" class="formulario">
+        <div class="section__header">
+            <h3 class="heading-3">Formulario de alta</h3>
+            <button class="btn-alta" value="open" (click)="abrirFormulario()"><i class="fa fa-angle-down"></i></button>
+        </div>
+
+        <form action="" method="" id="formulario" class="formulario" *ngIf="mostarFormulario">
             <div class="formulario__inputs">
                 <div>
                     <label class="formulario__label" for="titulo">Título: </label>
@@ -29,9 +33,9 @@
                 <label class="formulario__label" for="texto">Texto: </label>
                 <textarea name="texto" rows="5" cols="100" class="formulario__input" value=""
                     [(ngModel)]="texto"></textarea>
-                    <div class="formulario__btn">
-                        <button class="formulario__button" (click)="crearPost()">Crear</button>
-                    </div>
+                <div class="formulario__btn">
+                    <button class="formulario__button" (click)="crearPost()">Crear</button>
+                </div>
             </div>
         </form>
     </section>

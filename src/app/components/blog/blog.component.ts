@@ -7,11 +7,14 @@ import { from } from 'rxjs';
   styleUrls: ['./blog.component.css'],
 })
 export class BlogComponent implements OnInit {
+  
   noticias: any[] = [];
   titulo: string = '';
   imagen: string = '';
   texto: string = '';
   fecha: string = '';
+  mostarFormulario: boolean = true;
+  
   constructor() {
     this.noticias = new Array(
       {
@@ -48,17 +51,21 @@ export class BlogComponent implements OnInit {
         texto: this.texto,
         fecha: this.fecha,
       };
-      this.noticias = [...this.noticias, newPost];
-      this.resetForm()
+      this.noticias = [newPost, ...this.noticias];
+      this.resetForm();
     } else {
-      alert('Debes de rellenar todos los campos')
+      alert('Debes de rellenar todos los campos');
     }
   }
 
   resetForm(): void {
-   this.titulo = '';
-   this.imagen = '';
-   this.texto = '';
-   this.fecha = '';
+    this.titulo = '';
+    this.imagen = '';
+    this.texto = '';
+    this.fecha = '';
+  }
+
+  abrirFormulario(): void {
+    this.mostarFormulario = !this.mostarFormulario
   }
 }
