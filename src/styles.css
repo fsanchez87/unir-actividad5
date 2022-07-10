@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("./normlize.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: roboto, sans-serif;
+  color: #27272a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* Commons */
+.heading-3 {
+  font-size: 1.375rem;
+}
+
+.heading-5 {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.heading-7 {
+  font-size: 2.875rem;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
