@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-blog',
@@ -35,12 +36,29 @@ export class BlogComponent implements OnInit {
   }
 
   crearPost(): void {
-    let newPost: {} = {
-      titulo: this.titulo,
-      imagen: this.imagen,
-      texto: this.texto,
-      fecha: this.fecha,
-    };
-    this.noticias = [...this.noticias, newPost];
+    if (
+      this.titulo !== '' &&
+      this.imagen !== '' &&
+      this.texto !== '' &&
+      this.fecha !== ''
+    ) {
+      let newPost: {} = {
+        titulo: this.titulo,
+        imagen: this.imagen,
+        texto: this.texto,
+        fecha: this.fecha,
+      };
+      this.noticias = [...this.noticias, newPost];
+      this.resetForm()
+    } else {
+      alert('Debes de rellenar todos los campos')
+    }
+  }
+
+  resetForm(): void {
+   this.titulo = '';
+   this.imagen = '';
+   this.texto = '';
+   this.fecha = '';
   }
 }
