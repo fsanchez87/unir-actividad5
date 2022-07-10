@@ -9,54 +9,60 @@
 
     <!-- Formulario -->
     <section>
-        <form action="" method="" id="formulario">
-            <h3>Formulario de alta</h3>
-            <div>
-                <label for="titulo">Título: </label>
-                <input type="text" name="titulo" value="" [(ngModel)]="titulo">
+        <h3 class="heading-3 section__title">Formulario de alta</h3>
+        <form action="" method="" id="formulario" class="formulario">
+            <div class="formulario__inputs">
+                <div>
+                    <label class="formulario__label" for="titulo">Título: </label>
+                    <input type="text" name="titulo" class="formulario__input" value="" [(ngModel)]="titulo">
+                </div>
+                <div>
+                    <label class="formulario__label" for="imagen">Imagen: </label>
+                    <input type="text" name="imagen" class="formulario__input" value="" [(ngModel)]="imagen">
+                </div>
+                <div>
+                    <label class="formulario__label" for="Fecha">Fecha: </label>
+                    <input type="date" name="fecha" class="formulario__input" value="" [(ngModel)]="fecha">
+                </div>
             </div>
-            <div>
-                <label for="imagen">Imagen: </label>
-                <input type="text" name="imagen" value="" [(ngModel)]="imagen">
-            </div>
-            <div>
-                <label for="texto">Texto: </label>
-                <textarea name="texto" rows="10" cols="50" value="" [(ngModel)]="texto"></textarea>
-            </div>
-            <div>
-                <label for="Fecha">Título: </label>
-                <input type="date" name="fecha" value="" [(ngModel)]="fecha">
-            </div>
-            <div>
-                <button (click)="crearPost()">Crear</button>
+            <div class="formulario__textarea">
+                <label class="formulario__label" for="texto">Texto: </label>
+                <textarea name="texto" rows="5" cols="130" class="formulario__input" value=""
+                    [(ngModel)]="texto"></textarea>
+                    <div class="formulario__btn">
+                        <button class="formulario__button" (click)="crearPost()">Crear</button>
+                    </div>
             </div>
         </form>
     </section>
 
     <!-- Listado de noticias -->
-    <hr>
-    <section>
-        <h3>Listado de noticias</h3>
-        <article *ngFor="let noticia of noticias; let i = index;">
-            <header>
-                <h3>{{noticia.titulo}}</h3>
-            </header>
-            <section>
-                <figure>
-                    <img [src]="noticia.imagen" [alt]="'img noticia ' + i">
-                    <figcaption>Imagen noticia {{i + 1}}</figcaption>
-                </figure>
-                <p>{{noticia.texto}}</p>
-            </section>
-            <footer>
-                <small>
-                    Posted on <time datetime="2017-04-29T19:00">{{noticia.fecha}}</time>
-                </small>
-            </footer>
-        </article>
+    <section class="noticias">
+        <h3 class="heading-5">Listado de noticias</h3>
+        <div class="noticias__w-noticias">
+            <div class="noticias__article" *ngFor="let noticia of noticias; let i = index;">
+                <article class="article">
+                    <header>
+                        <h3>{{noticia.titulo}}</h3>
+                    </header>
+                    <section>
+                        <figure>
+                            <img class="noticias__img" [src]="noticia.imagen" [alt]="'img noticia ' + i">
+                            <figcaption><small>Imagen noticia {{i + 1}}</small></figcaption>
+                        </figure>
+                        <p>{{noticia.texto}}</p>
+                    </section>
+                    <footer>
+                        <small>
+                            Fecha de publicación: <time>{{noticia.fecha}}</time>
+                        </small>
+                    </footer>
+                </article>
+            </div>
+        </div>
 
     </section>
 </main>
 <footer class="footer">
-    <p class="footer__note">Francisco Sánchez</p>
+    <p class="footer__note">© Francisco Sánchez</p>
 </footer>
