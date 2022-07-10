@@ -9,7 +9,7 @@
 
 /* formulario */
 .section__title {
-    margin-top: 18px;
+  margin-top: 18px;
 }
 
 .formulario {
@@ -18,14 +18,14 @@
   background-color: #eff6ff;
   gap: 40px;
   margin: 10px;
-  justify-content:baseline;
+  justify-content: baseline;
 }
 
 .formulario__inputs {
-    
 }
 
 .formulario__textarea {
+  overflow: auto;
 }
 
 .formulario__label {
